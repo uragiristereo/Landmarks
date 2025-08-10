@@ -1,0 +1,46 @@
+[versions]
+# Common
+kotlin = "2.2.0"
+ksp = "2.2.0-2.0.2"
+compose = "1.8.2"
+observableViewModel = "1.0.0-BETA-12"
+nativeCoroutines = "1.0.0-ALPHA-45"
+kotlinInject = "0.8.0"
+serialization = "1.9.0"
+
+# Android
+agp = "8.12.0"
+activity = "1.10.1"
+core = "1.16.0"
+
+
+[libraries]
+# Common
+serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+composeRuntime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
+composeFoundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
+composeMaterial3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose" }
+composeUi = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
+composeUiTooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "compose" }
+composeUiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose" }
+composeComponentsUiToolingPreview = { module = "org.jetbrains.compose.components:components-ui-tooling-preview", version.ref = "compose" }
+observableViewModel = { module = "com.rickclephas.kmp:kmp-observableviewmodel-core", version.ref = "observableViewModel" }
+kotlinInjectRuntime = { module = "me.tatarka.inject:kotlin-inject-runtime-kmp", version.ref = "kotlinInject" }
+kotlinInjectCompiler = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlinInject" }
+
+# Android
+core = { module = "androidx.core:core-ktx", version.ref = "core" }
+activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+
+
+[plugins]
+# Common
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+nativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "nativeCoroutines" }
+
+# Android
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
