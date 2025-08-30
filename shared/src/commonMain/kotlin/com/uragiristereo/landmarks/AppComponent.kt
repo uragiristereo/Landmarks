@@ -9,8 +9,11 @@ import me.tatarka.inject.annotations.KmpComponentCreate
 import me.tatarka.inject.annotations.Provides
 
 @Component
+@AppScope
 abstract class AppComponent {
-    val RealLandmarkRepository.bind: LandmarkRepository; @Provides get() = this
+    @Provides
+    @AppScope
+    fun RealLandmarkRepository.bind(): LandmarkRepository = this
 
     abstract val landmarkListViewModel: LandmarkListViewModel
 
